@@ -11,11 +11,15 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(data => {
+        //access the topics
         topicsArray = data.data.topics;
-        
+        //iterate through the topics
         topicsArray.forEach(topics => {
+        //makes variable for each tab and set it to the function component
         const newTab = topicTabs(topics);
+        //makes variable that set it to the .topics class
         const pageTabs = document.querySelector('.topics');
+        //appends the topic(div) to the pageTags  
         pageTabs.appendChild(newTab);
     });
 
@@ -32,14 +36,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
         tab.classList.add('tab');
        tab.textContent = topics;
-
-       
-       
-
-        // topics.map(e => {
-        //     tab.textContent = e 
-        // })
-
 
         return tab
     }
