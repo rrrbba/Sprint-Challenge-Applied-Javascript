@@ -80,7 +80,7 @@ function Article(object){
     author.appendChild(imgCon);
     card.appendChild(headlineText);
     card.appendChild(author);
-    card.appendChild(headlineText);
+    author.appendChild(byAuthor);
 
     return card
 
